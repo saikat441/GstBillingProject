@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Product</title>
+</head>
+<body>
+    <h1>Add Product</h1>
+    
+    <!-- Display error message if it exists -->
+    <div th:if="${error}" style="color: red;">
+        <p th:text="${error}"></p>
+    </div>
+    
+    <div th:if="${success}" style="color: green;">
+        <p th:text="${success}"></p>
+    </div>
+
+    <form th:action="@{/do-addProduct}" th:object="${product}" method="post">
+        <label>Product Name:</label><br>
+        <input type="text" th:field="*{productName}" required><br><br>
+
+        <label>Product Code:</label><br>
+        <input type="text" th:field="*{pCode}" required><br><br>
+
+        <label>Price:</label><br>
+        <input type="number" th:field="*{price}" step="0.01" required><br><br>
+
+        <label>Tax Rate:</label><br>
+        <input type="number" th:field="*{taxRate}" step="0.01" required><br><br>
+
+        <label>Quantity:</label><br>
+        <input type="number" th:field="*{quantity}" required><br><br>
+
+        <button type="submit">Add Product</button>
+        <button type="reset">Reset</button>
+    </form>
+<br>
+    <a th:href="@{/adminHome}">
+    <button type="button">Back to Admin Home</button>
+    </a>
+</body>
+</html>

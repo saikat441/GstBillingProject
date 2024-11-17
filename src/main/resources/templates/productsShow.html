@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+</head>
+<body>
+
+<h2>Product List</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Code</th>
+            <th>Price</th>
+            <th>Tax Rate</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.Pid}">1</td>
+            <td th:text="${product.ProductName}">Product Name</td>
+            <td th:text="${product.PCode}">Product Code</td>
+            <td th:text="${product.Price}">100.0</td>
+            <td th:text="${product.TaxRate}">5%</td>
+            <td th:text="${product.Quantity}">10</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<a th:href="@{/adminHome}">
+    <button type="button">Back to Admin Home</button>
+    </a>
+
+</body>
+</html>

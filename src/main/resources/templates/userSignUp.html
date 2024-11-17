@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>User Sign Up</h1>
+    
+    <!-- Display error message if it exists -->
+    <div th:if="${error}" style="color: red;">
+        <p th:text="${error}"></p>
+    </div>
+
+    <form th:action="@{/do-signup}" th:object="${user}" method="post">
+        <label>Name:</label><br>
+        <input type="text" th:field="*{name}" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" th:field="*{email}" required><br><br>
+
+        <label>Phone No:</label><br>
+        <input type="text" th:field="*{phoneNo}" required><br><br>
+
+        <label>GST No:</label><br>
+        <input type="text" th:field="*{gstNo}" required><br><br>
+
+        <label>Address:</label><br>
+        <input type="text" th:field="*{address}" required><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" th:field="*{password}" required><br><br>
+
+        <label>Shop Type:</label><br>
+        <select th:field="*{shopType}" required>
+            <option value="Retailers">Retailers</option>
+            <option value="Stakeholder">Stakeholder</option>
+        </select><br><br>
+
+        <button type="submit">Sign Up</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+    <p>Already have an account? <a href="/userLogin">Log in here</a>.</p>
+</body>
+</html>
