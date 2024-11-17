@@ -2,12 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Product List</title>
+     <link rel="stylesheet" th:href="@{/CSS/productsShow.css}" />
 </head>
 <body>
 
 <h2>Product List</h2>
 
-<table border="1">
+<table>
     <thead>
         <tr>
             <th>Product ID</th>
@@ -16,6 +17,7 @@
             <th>Price</th>
             <th>Tax Rate</th>
             <th>Quantity</th>
+            <th>Action</th> <!-- New column for actions -->
         </tr>
     </thead>
     <tbody>
@@ -26,15 +28,23 @@
             <td th:text="${product.Price}">100.0</td>
             <td th:text="${product.TaxRate}">5%</td>
             <td th:text="${product.Quantity}">10</td>
+            <!-- Action button for each product -->
+            <td>
+                <a th:href="@{/editProduct/{id}(id=${product.Pid})}">
+                    <button class="edit-btn">Edit</button>
+                </a>
+                <a th:href="@{/deleteProduct/{id}(id=${product.Pid})}">
+                    <button class="delete-btn">Delete</button>
+                </a>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<br>
-
 <a th:href="@{/adminHome}">
-    <button type="button">Back to Admin Home</button>
-    </a>
+    <button type="button" class="edit-btn">Back to Admin Home</button>
+</a>
 
 </body>
 </html>
+ 

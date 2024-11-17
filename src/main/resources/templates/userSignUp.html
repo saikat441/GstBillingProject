@@ -2,44 +2,53 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Sign Up</title>
+ 
+     <link rel="stylesheet" th:href="@{/CSS/userSignUp.css}" />
 </head>
 <body>
-    <h1>User Sign Up</h1>
-    
-    <!-- Display error message if it exists -->
-    <div th:if="${error}" style="color: red;">
-        <p th:text="${error}"></p>
+
+    <div class="signup-container">
+        <h1>User Sign Up</h1>
+
+        <!-- Display error message if it exists -->
+        <div th:if="${error}" class="error-message">
+            <p th:text="${error}"></p>
+        </div>
+
+        <form th:action="@{/do-signup}" th:object="${user}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" th:field="*{email}" required><br>
+
+            <label for="phoneNo">Phone No:</label>
+            <input type="text" id="phoneNo" th:field="*{phoneNo}" required><br>
+
+            <label for="gstNo">GST No:</label>
+            <input type="text" id="gstNo" th:field="*{gstNo}" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" th:field="*{address}" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" th:field="*{password}" required><br>
+
+            <label for="shopType">Shop Type:</label>
+            <select id="shopType" th:field="*{shopType}" required>
+                <option value="Retailers">Retailers</option>
+                <option value="Stakeholder">Stakeholder</option>
+            </select><br>
+
+            <div style="display: flex; justify-content: space-between;">
+                <button type="submit">Sign Up</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+
+        <p>Already have an account? <a href="/userLogin">Log in here</a>.</p>
     </div>
 
-    <form th:action="@{/do-signup}" th:object="${user}" method="post">
-        <label>Name:</label><br>
-        <input type="text" th:field="*{name}" required><br><br>
-
-        <label>Email:</label><br>
-        <input type="email" th:field="*{email}" required><br><br>
-
-        <label>Phone No:</label><br>
-        <input type="text" th:field="*{phoneNo}" required><br><br>
-
-        <label>GST No:</label><br>
-        <input type="text" th:field="*{gstNo}" required><br><br>
-
-        <label>Address:</label><br>
-        <input type="text" th:field="*{address}" required><br><br>
-
-        <label>Password:</label><br>
-        <input type="password" th:field="*{password}" required><br><br>
-
-        <label>Shop Type:</label><br>
-        <select th:field="*{shopType}" required>
-            <option value="Retailers">Retailers</option>
-            <option value="Stakeholder">Stakeholder</option>
-        </select><br><br>
-
-        <button type="submit">Sign Up</button>
-        <button type="reset">Reset</button>
-    </form>
-    
-    <p>Already have an account? <a href="/userLogin">Log in here</a>.</p>
 </body>
 </html>
+ 

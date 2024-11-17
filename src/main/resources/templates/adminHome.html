@@ -2,21 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Admin Home</title>
+     <link rel="stylesheet" th:href="@{/CSS/adminHome.css}" />
 </head>
 <body>
-    <h1>Admin Home</h1>
-    
-    <!-- Display error message if it exists -->
-    <div th:if="${error}" style="color: red;">
-        <p th:text="${error}"></p>
-    </div>
-    
-    <div th:if="${success}" style="color: green;">
-        <p th:text="${success}"></p>
-    </div>
+    <div class="admin-home">
+        <h1>Admin Home</h1>
+        
+        <!-- Display error message if it exists -->
+        <div th:if="${error}" class="message error">
+            <p th:text="${error}"></p>
+        </div>
+        
+        <!-- Display success message if it exists -->
+        <div th:if="${success}" class="message success">
+            <p th:text="${success}"></p>
+        </div>
 
-    <button onclick="location.href='/admin/addProductButton'">Add Product</button>
-    <button onclick="location.href='/admin/showProductsButton'">Show Product</button>
-    <button onclick="location.href='/admin/purchaseDetails'">Purchase Product Details</button>
+        <!-- Buttons in a vertical layout -->
+        <div class="button-container">
+            <a href="/admin/addProductButton" class="add-product">Add Product</a>
+            <a href="/admin/showProductsButton" class="show-product">Show Product</a>
+            <a href="/admin/purchaseDetails" class="purchase-details">Purchase Product Details</a>
+        </div>
+    </div>
 </body>
 </html>
+ 

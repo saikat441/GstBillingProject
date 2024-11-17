@@ -2,26 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Admin Login</title>
+     <link rel="stylesheet" th:href="@{/CSS/adminLogin.css}" />
 </head>
 <body>
-    <h1>Admin Login</h1>
-    
-    <!-- Display error message if it exists -->
-    <div th:if="${error}" style="color: red;">
-        <p th:text="${error}"></p>
-    </div>
-    
     <form th:action="@{/adminLogin}" method="post">
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+        <h1>Admin Login</h1>
+        
+        <!-- Display error message if it exists -->
+        <div th:if="${error}" class="error-message">
+            <p th:text="${error}"></p>
+        </div>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-        <button type="submit">Login</button>
-        <button type="reset">Reset</button>
+        <div class="button-container">
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+        </div>
+
+        <button onclick="location.href='/userLogin'">User Login</button>
     </form>
-    
-   <br> <button onclick="location.href='/userLogin'">User Login</button>
 </body>
 </html>
+ 

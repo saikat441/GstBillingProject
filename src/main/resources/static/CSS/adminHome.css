@@ -1,0 +1,94 @@
+@charset "UTF-8";
+       /* General body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Card container */
+        .admin-home {
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Message styles */
+        .message {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+
+        .success {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* Button styles */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Individual button styles */
+        .button-container a.add-product {
+            background-color: #007bff; /* Blue */
+        }
+
+        .button-container a.add-product:hover {
+            background-color: #0056b3; /* Darker Blue */
+        }
+
+        .button-container a.show-product {
+            background-color: #28a745; /* Green */
+        }
+
+        .button-container a.show-product:hover {
+            background-color: #218838; /* Darker Green */
+        }
+
+        .button-container a.purchase-details {
+            background-color: #ffc107; /* Yellow */
+            color: #333333;
+        }
+
+        .button-container a.purchase-details:hover {
+            background-color: #e0a800; /* Darker Yellow */
+        }

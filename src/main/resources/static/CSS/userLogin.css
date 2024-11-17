@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Container for Login Form */
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Title */
+        h1 {
+            color: #3b3b3b;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Error message */
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        /* Labels */
+        label {
+            text-align: left;
+            width: 100%;
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+            display: block;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        button {
+            width: 48%; /* Make buttons side by side */
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 10px 1%; /* Space between the buttons */
+        }
+
+        button[type="submit"] {
+            background-color: #3498db; /* Blue color for login */
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        button[type="reset"] {
+            background-color: #e74c3c; /* Red color for reset */
+            color: white;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+
+        /* Additional Link Styling */
+        p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Adjust for smaller screens */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 20px 30px;
+            }
+
+            button {
+                width: 100%; /* Stack buttons on smaller screens */
+                margin: 10px 0;
+            }
+        }
+
+        /* Admin Login Button Styling */
+        .admin-login-btn {
+            background-color: #2ecc71; /* Green color for admin login */
+            color: white;
+            padding: 14px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .admin-login-btn:hover {
+            background-color: #27ae60;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
